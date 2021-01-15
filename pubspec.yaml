@@ -1,6 +1,6 @@
 name: material_spacing_checker
 description: A package that draws a grid to check if the widget is aligned according to the Material Design spacing method.
-version: 0.0.1
+version: 0.1.0
 homepage: https://github.com/welchi/material_spacing_checker
 environment:
   sdk: ">=2.7.0 <3.0.0"

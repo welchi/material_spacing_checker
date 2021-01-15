@@ -14,7 +14,7 @@ class MaterialSpacingChecker extends StatelessWidget {
             );
   final Widget child;
   final Color gridColor;
-  final int space;
+  final double space;
   final double lineWidth;
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class _GridPaint extends CustomPainter {
     @required this.lineWidth,
   });
   final Size screenSize;
-  final int space;
+  final double space;
   final Color gridColor;
   final double lineWidth;
   @override
