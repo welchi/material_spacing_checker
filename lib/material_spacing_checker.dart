@@ -57,6 +57,7 @@ class _GridPaint extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = lineWeight;
 
+    // Draw horizontal lines
     for (var i = 0; i < horizontalLineCount; i++) {
       canvas.drawLine(
         Offset(
@@ -70,6 +71,8 @@ class _GridPaint extends CustomPainter {
         paint,
       );
     }
+
+    // Draw vertical lines
     for (var i = 0; i < verticalLineCount; i++) {
       canvas.drawLine(
         Offset(
