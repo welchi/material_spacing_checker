@@ -50,14 +50,14 @@ class _GridPaint extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     // Without +1, the number of lines may be insufficient
-    final widthLineCount = screenSize.width ~/ lineSpacing + 1;
-    final heightLineCount = screenSize.height ~/ lineSpacing;
+    final horizontalLineCount = screenSize.width ~/ lineSpacing + 1;
+    final verticalLineCount = screenSize.height ~/ lineSpacing;
     final paint = Paint()
       ..color = lineColor
       ..style = PaintingStyle.stroke
       ..strokeWidth = lineWeight;
 
-    for (var i = 0; i < widthLineCount; i++) {
+    for (var i = 0; i < horizontalLineCount; i++) {
       canvas.drawLine(
         Offset(
           (lineSpacing * i).toDouble(),
@@ -70,7 +70,7 @@ class _GridPaint extends CustomPainter {
         paint,
       );
     }
-    for (var i = 0; i < heightLineCount; i++) {
+    for (var i = 0; i < verticalLineCount; i++) {
       canvas.drawLine(
         Offset(
           0,
