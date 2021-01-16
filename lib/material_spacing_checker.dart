@@ -6,7 +6,7 @@ class MaterialSpacingChecker extends StatelessWidget {
   MaterialSpacingChecker({
     @required this.child,
     this.space = 8,
-    this.lineWidth = 0.3,
+    this.lineWeight = 0.3,
     Color color,
   }) : gridColor = color ??
             Colors.red.withOpacity(
@@ -15,7 +15,7 @@ class MaterialSpacingChecker extends StatelessWidget {
   final Widget child;
   final Color gridColor;
   final double space;
-  final double lineWidth;
+  final double lineWeight;
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -27,7 +27,7 @@ class MaterialSpacingChecker extends StatelessWidget {
             screenSize: screenSize,
             gridColor: gridColor,
             space: space,
-            lineWidth: lineWidth,
+            lineWidth: lineWeight,
           ),
         )
       ],
