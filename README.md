@@ -22,6 +22,8 @@ Widget build(BuildContext context) {
 // ..
 ```
 
+![Example1](https://gyazo.com/b76b75d0b3449aa5728ffb8a7f5f9bda)
+
 Customize lines
 ```dart
 // ..
@@ -43,4 +45,6 @@ Widget build(BuildContext context) {
 }
 // ..
 ```
+
+![Example2](https://gyazo.com/1e1b4eb88ee59c3aa4fd7e429ed460c6)
 
