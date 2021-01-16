@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 class MaterialSpacingChecker extends StatelessWidget {
   MaterialSpacingChecker({
     @required this.child,
-    this.space = 8,
+    this.lineSpacing = 8,
     this.lineWeight = 0.3,
-    Color color,
-  }) : gridColor = color ??
+    Color lineColor,
+  }) : lineColor = lineColor ??
             Colors.red.withOpacity(
               0.7,
             );
   final Widget child;
-  final Color gridColor;
-  final double space;
+  final Color lineColor;
+  final double lineSpacing;
   final double lineWeight;
   @override
   Widget build(BuildContext context) {
@@ -25,9 +25,9 @@ class MaterialSpacingChecker extends StatelessWidget {
         CustomPaint(
           painter: _GridPaint(
             screenSize: screenSize,
-            gridColor: gridColor,
-            space: space,
-            lineWidth: lineWeight,
+            lineColor: lineColor,
+            lineSpacing: lineSpacing,
+            lineWeight: lineWeight,
           ),
         )
       ],
@@ -39,32 +39,32 @@ class MaterialSpacingChecker extends StatelessWidget {
 class _GridPaint extends CustomPainter {
   _GridPaint({
     @required this.screenSize,
-    @required this.gridColor,
-    @required this.space,
-    @required this.lineWidth,
+    @required this.lineColor,
+    @required this.lineSpacing,
+    @required this.lineWeight,
   });
   final Size screenSize;
-  final double space;
-  final Color gridColor;
-  final double lineWidth;
+  final double lineSpacing;
+  final Color lineColor;
+  final double lineWeight;
   @override
   void paint(Canvas canvas, Size size) {
     // Without +1, the number of lines may be insufficient
-    final widthLineCount = screenSize.width ~/ space + 1;
-    final heightLineCount = screenSize.height ~/ space;
+    final widthLineCount = screenSize.width ~/ lineSpacing + 1;
+    final heightLineCount = screenSize.height ~/ lineSpacing;
     final paint = Paint()
-      ..color = gridColor
+      ..color = lineColor
       ..style = PaintingStyle.stroke
-      ..strokeWidth = lineWidth;
+      ..strokeWidth = lineWeight;
 
     for (var i = 0; i < widthLineCount; i++) {
       canvas.drawLine(
         Offset(
-          (space * i).toDouble(),
+          (lineSpacing * i).toDouble(),
           0,
         ),
         Offset(
-          (space * i).toDouble(),
+          (lineSpacing * i).toDouble(),
           screenSize.height,
         ),
         paint,
@@ -74,11 +74,11 @@ class _GridPaint extends CustomPainter {
       canvas.drawLine(
         Offset(
           0,
-          (space * i).toDouble() + 4,
+          (lineSpacing * i).toDouble() + 4,
         ),
         Offset(
           screenSize.width,
-          (space * i).toDouble() + 4,
+          (lineSpacing * i).toDouble() + 4,
         ),
         paint,
       );
