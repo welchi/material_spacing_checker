@@ -4,8 +4,6 @@ A package that draws a grid to check if the widget is aligned according to the M
 
 ## Usage
 
-## Example
-
 ```dart
 // ..
 Widget build(BuildContext context) {
